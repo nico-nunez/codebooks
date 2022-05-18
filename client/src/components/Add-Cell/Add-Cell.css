@@ -1,0 +1,26 @@
+.add-cell-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: .4;
+  transition: opacity .25s;
+  margin-top: 60px;
+}
+
+.add-cell-wrapper .button {
+  margin: 0 100px;
+}
+
+.add-cell-divider {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dotted black;
+}
+
+.add-cell-wrapper:hover {
+  opacity: 1;
+}

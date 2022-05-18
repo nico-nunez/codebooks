@@ -1,0 +1,139 @@
+.modal {
+  position: absolute;
+  top:0;
+  left: 0;
+  transition: all .2s;
+}
+
+.modal-card {
+  position: absolute;
+  top: 10%;
+}
+
+.card-body-container {
+  border: 1px solid #4e5d6c88;
+  border-top: none;
+}
+
+.card-body-header {
+  display: flex;
+  padding-top: 1px;
+}
+
+.active-form {
+  border-top: 4px solid #df691a;
+  /* border-top: 4px solid #df691ab9; */
+  /* border-top: 4px solid #4e5d6c; */
+}
+
+.header-form-btn:nth-child(1) {
+  border-right: 1px solid #4e5d6c73;
+}
+
+.header-form-btn {
+  width: 50%;
+  padding: 5px 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.header-form-btn:hover {
+  cursor: pointer;
+}
+
+.card-body-section {
+  width: 70%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.btn-form-submit {
+  width: 100%;
+  margin: 20px auto;
+  margin-bottom: 30px;
+}
+
+
+.card-body-divider {
+  width: 65%; 
+  text-align: center; 
+  border-bottom: 1px solid #4e5d6c; 
+  line-height: 0.1em;
+  margin: auto; 
+} 
+
+.card-body-divider span { 
+   background: #1f2d3b; 
+   padding:0 10px; 
+}
+
+
+.section-social {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-btn-div {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding-bottom: 20px;
+}
+
+.social-btn {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  background-color: #4e5d6c;
+  align-items: center; 
+  transition: opacity .1s;
+}
+
+.social-btn:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.social-btn span {
+  display: inline-block;
+  margin: auto;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.social-btn .fa-brands {
+  height: 40px;
+  padding: 8px 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+}
+
+.btn-google {
+  background-color: 	#4285F4;
+}
+
+.btn-github {
+  background-color: #1d1a1a;
+}
+
+.section-form input {
+  margin-bottom: 8px;
+}
+
+.section-form input::placeholder {
+  color: #1f2d3b9a;
+}
+
+.section-form input.is-danger {
+  margin-bottom: 0;
+}
+
+.error-messages {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  color: #d9534f;
+}

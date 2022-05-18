@@ -1,0 +1,51 @@
+.action-bar-wrapper {
+  display: flex;
+  min-height: 30px;
+  width: 100%;
+  background-color: #37414b;
+  transition: opacity .2s;
+  align-items: center;
+}
+
+
+.action-bar-end {
+  margin-left: auto;
+}
+
+.action-bar-wrapper:hover {
+  opacity: 1;
+}
+
+.action-bar-button {
+  margin: 8px;
+}
+
+.action-bar-buttons button:disabled {
+  border-color: #dee5edaa;
+  background-color: #37414b;
+}
+
+.action-bar-tabs {
+  display: flex;
+  color: #dee5ed;
+}
+
+.action-bar-tab {
+  opacity: .7;
+  font-size: .8rem;
+  padding: 5px 15px;
+  border-right: 1px solid #1e1e1e60;
+  transition: opacity .25s;
+}
+
+.action-bar-tab:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #dee5ed;
+}
+
+.action-bar-tab.active {
+  border: none;
+  opacity: 1;
+  background-color: #1e1e1e;
+}

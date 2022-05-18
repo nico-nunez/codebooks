@@ -1,0 +1,1 @@
+export type Recents = number[];
