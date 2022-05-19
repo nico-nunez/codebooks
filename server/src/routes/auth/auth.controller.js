@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const randomID = require('../../utils/randomID');
 const models = require('../../models/models');
 
+module.exports.CLIENT_HOME = process.env.CLIENT_HOME || 'http://localhost:3000';
+
 module.exports.register = catchAsync(async (req, res, next) => {
 	const { email, password, profile_name } = req.body;
 	const salt = await bcrypt.genSalt(10);
@@ -33,7 +35,7 @@ module.exports.githubCallback = (req, res) => {
 
 module.exports.logout = (req, res) => {
 	req.logout();
-	res.redirect(process.env.CLIENT_HOMEPAGE);
+	res.redirect(this.CLIENT_HOME);
 };
 
 module.exports.authenticateSession = (req, res, next) => {

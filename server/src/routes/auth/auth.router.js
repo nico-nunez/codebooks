@@ -3,7 +3,7 @@ const router = require('express').Router();
 const controller = require('./auth.controller');
 const { validRegistration, validLogin } = require('./auth.validators');
 
-const CLIENT_HOMEPAGE = 'http://localhost:3000';
+const CLIENT_HOME = controller.CLIENT_HOME || 'http://localhost:3000';
 
 // @desc: Local regisitration
 router.post('/register', validRegistration, controller.register);
@@ -31,8 +31,8 @@ router.get(
 router.get(
 	'/google/callback',
 	passport.authenticate('google', {
-		successRedirect: process.env.CLIENT_HOMEPAGE,
-		failureRedirect: process.env.CLIENT_HOMEPAGE,
+		successRedirect: process.env.CLIENT_HOME,
+		failureRedirect: process.env.CLIENT_HOME,
 		failWithError: true,
 	}),
 	controller.googleCallback
@@ -50,8 +50,8 @@ router.get(
 router.get(
 	'/github/callback',
 	passport.authenticate('github', {
-		successRedirect: process.env.CLIENT_HOMEPAGE,
-		failureRedirect: process.env.CLIENT_HOMEPAGE,
+		successRedirect: process.env.CLIENT_HOME,
+		failureRedirect: process.env.CLIENT_HOME,
 		failWithError: true,
 	})
 );
