@@ -2,9 +2,9 @@ import bundle from '../bundler';
 import { store, TabsState } from '../state';
 import { BundleState } from '../state/reducers/bundlesReducer';
 
+export const BASE_URL = 'https://codebooks.net';
+
 export const saveStore = () => {
-	// const { page, cells, tabs } = store.getState();
-	// localStorage.setItem('__store', JSON.stringify({ page, cells, tabs }));
 	localStorage.setItem('__store', JSON.stringify(store.getState()));
 };
 

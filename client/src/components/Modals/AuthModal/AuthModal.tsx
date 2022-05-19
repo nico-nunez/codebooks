@@ -3,7 +3,7 @@ import Login from './Login';
 import Register from './Register';
 import Modal, { ModalBody } from '../Modal/Modal';
 import { useState } from 'react';
-import { saveStore } from '../../../utils';
+import { saveStore, BASE_URL } from '../../../utils';
 import { useTypedSelector } from '../../../hooks';
 
 type ActiveFormState = 'login' | 'register';
@@ -18,11 +18,11 @@ const AuthModal: React.FC<AuthModalProps> = ({ active, onCancel }) => {
 	const errors = useTypedSelector(({ auth }) => auth.errors);
 	const onGoogleClick = () => {
 		saveStore();
-		window.open('http://localhost:8080/api/auth/google', '_self');
+		window.open(`${BASE_URL}/api/auth/google`, '_self');
 	};
 	const onGithubClick = () => {
 		saveStore();
-		window.open('http://localhost:8080/api/auth/github', '_self');
+		window.open(`${BASE_URL}/api/auth/github`, '_self');
 	};
 	const renderedErrors = errors?.map((err, i) => {
 		return (

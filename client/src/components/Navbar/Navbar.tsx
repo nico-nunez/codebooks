@@ -6,6 +6,7 @@ import {
 	useBlockNav,
 } from '../../hooks';
 import UserMenu from './UserMenu';
+import { BASE_URL } from '../../utils';
 import RecentPages from './RecentPages';
 import DiscardModal from '../Modals/DiscardModal';
 import AuthModal from '../Modals/AuthModal/AuthModal';
@@ -26,7 +27,7 @@ const Navbar = () => {
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
 		blockNav(e, () => () => {
-			window.open('http://localhost:8080/api/auth/logout', '_self');
+			window.open(`${BASE_URL}/api/auth/logout`, '_self');
 		});
 	};
 
