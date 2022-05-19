@@ -13,6 +13,8 @@ const pagesRoutes = require('./routes/pages/pages.router');
 const cellsRoutes = require('./routes/cells/cells.router');
 const tabsRoutes = require('./routes/tabs/tabs.router');
 
+app.set('trust proxy', process.env.NODE_ENV === 'production');
+
 app.use(
 	helmet.contentSecurityPolicy({
 		directives: {

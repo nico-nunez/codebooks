@@ -27,9 +27,6 @@ import {
 	PagesAction,
 } from '../actions/pagesActions';
 
-// axios.defaults.baseURL = 'http://localhost:8080';
-// axios.defaults.withCredentials = true;
-
 type FullPageAction = PagesAction | CellAction | TabAction | BundleAction;
 type Pagination = { page: number; limit: number };
 
