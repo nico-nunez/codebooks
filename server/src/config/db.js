@@ -24,7 +24,7 @@ module.exports.sessionConfig = {
 	resave: false,
 	saveUninitialized: true,
 	cookie: {
-		secure: process.env.NODE_ENV === 'production',
+		// secure: process.env.NODE_ENV === 'production',
 		expires: 1000 * 60 * 60 * 24 * 7 * 2,
 	},
 };

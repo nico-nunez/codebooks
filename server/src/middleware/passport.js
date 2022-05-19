@@ -37,7 +37,7 @@ passport.use(
 		{
 			clientID: process.env.GOOGLE_CLIENT_ID,
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-			callbackURL: '/api/auth/google/callback',
+			callbackURL: 'https://codebooks.net/api/auth/google/callback',
 		},
 		async (accessToken, refreshToken, profile, done) => {
 			const { displayName, emails = [{}], id } = profile;
@@ -57,7 +57,7 @@ passport.use(
 		{
 			clientID: process.env.GITHUB_CLIENT_ID,
 			clientSecret: process.env.GITHUB_CLIENT_SECRET,
-			callbackURL: '/api/auth/github/callback',
+			callbackURL: 'https://codebooks.net/api/auth/github/callback',
 		},
 		async (accessToken, refreshToken, profile, done) => {
 			const { nodeId, displayName, emails = [{}] } = profile;
