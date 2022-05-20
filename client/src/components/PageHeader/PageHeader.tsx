@@ -20,7 +20,7 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = ({ page_name }) => {
 	const { pathname } = useLocation();
-	const { savePage, deleteSavedPage } = useActions();
+	const { savePage, deleteSavedPage, authClearErrors } = useActions();
 	const [showAuthModal, setShowAuthModal] = useToggle();
 	const [showDiscardModal, setShowDiscardModal] = useToggle();
 	const [showDeleteModal, setShowDeleteModal] = useToggle();
@@ -90,10 +90,14 @@ const PageHeader: React.FC<PageHeaderProps> = ({ page_name }) => {
 					onCancelClick={() => setShowDeleteModal(false)}
 				/>
 			)}
-			{showAuthModal && (
+			{(showAuthModal || auth.errors) && (
 				<AuthModal
 					active={showAuthModal}
-					onCancel={() => setShowAuthModal(false)}
+					errors={auth.errors}
+					onCancel={() => {
+						authClearErrors();
+						setShowAuthModal(false);
+					}}
 				/>
 			)}
 			{showDiscardModal && (

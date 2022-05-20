@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import PageCard from '../PageCard/PageCard';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTypedSelector, useActions } from '../../hooks';
 import { Page, SavedPage } from '../../state';
 
 const UsersPages = () => {
 	const { userId } = useParams();
-	const navigate = useNavigate();
 	const { fetchUserPages } = useActions();
-	const auth = useTypedSelector(({ auth }) => auth);
 	const error = useTypedSelector(({ pages: { error } }) => error);
 	const userPages = useTypedSelector(({ pages }) => {
 		const userPages: Page[] = [];

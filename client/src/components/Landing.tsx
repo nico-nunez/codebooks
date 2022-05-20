@@ -1,6 +1,5 @@
 import Navbar from './Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
-import { useTypedSelector } from '../hooks';
 
 const Landing = () => {
 	// const error = useTypedSelector(({ pages: { error } }) => error);

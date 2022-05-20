@@ -27,11 +27,11 @@ const reducer = produce(
 				let content = '';
 				if (code_language === 'javascript') {
 					content = `// Import js files from unpkg.com:
-      // import React from 'react';`;
+// import React from 'react'; \n`;
 				}
 				if (code_language === 'css') {
 					content = `/* Import css files from unpkg.com: */
-      /* @import 'bulma'; */`;
+/* @import 'bulma'; */ \n`;
 				}
 				const newTab: Tab = {
 					id: randomId(),

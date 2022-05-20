@@ -34,6 +34,10 @@ const reducer = produce(
 				state.errors = action.payload.errors;
 				return state;
 
+			case AuthActionType.AUTH_CLEAR_ERRORS:
+				state.errors = null;
+				return state;
+
 			default:
 				return state;
 		}

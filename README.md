@@ -4,7 +4,7 @@ Codebooks is a web-based code editor that currently supports html, css, js, and 
 
 ## Demo
 
-coming soon...
+<a href="https://codebooks.net">Check it out</a>
 
 ## Technologies
 

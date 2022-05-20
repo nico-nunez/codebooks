@@ -28,6 +28,7 @@ export enum AuthActionType {
 	AUTHENTICATE_SESSION = 'authenticate_session',
 	AUTH_SUCCESS = 'register_success',
 	AUTH_FAILURE = 'auth_failure',
+	AUTH_CLEAR_ERRORS = 'auth_clear_errors',
 }
 
 export enum PagesActionType {

@@ -30,7 +30,13 @@ export interface AuthenticateSessionAction {
 	payload: {};
 }
 
+export interface AuthClearErrorsAction {
+	type: AuthActionType.AUTH_CLEAR_ERRORS;
+	payload: {};
+}
+
 export type AuthAction =
 	| RegisterUserAction
 	| AuthSuccessAction
-	| AuthFailureAction;
+	| AuthFailureAction
+	| AuthClearErrorsAction;

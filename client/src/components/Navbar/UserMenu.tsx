@@ -14,9 +14,9 @@ const UserMenu: React.FC<UserMenuProps> = ({
 }) => {
 	return (
 		<NavbarDropdown title={currentUser.profile_name}>
-			<a href={`/users/${currentUser.id}`} onClick={onLinkClick}>
+			{/* <a href={`/users/${currentUser.id}`} onClick={onLinkClick}>
 				Profile
-			</a>
+			</a> */}
 			<a href={`/users/${currentUser.id}/pages`} onClick={onLinkClick}>
 				My Book
 			</a>

@@ -4,18 +4,17 @@ import Register from './Register';
 import Modal, { ModalBody } from '../Modal/Modal';
 import { useState } from 'react';
 import { saveStore, BASE_URL } from '../../../utils';
-import { useTypedSelector } from '../../../hooks';
 
 type ActiveFormState = 'login' | 'register';
 
 interface AuthModalProps {
 	active: boolean;
 	onCancel: () => void;
+	errors: string[] | null;
 }
 
-const AuthModal: React.FC<AuthModalProps> = ({ active, onCancel }) => {
+const AuthModal: React.FC<AuthModalProps> = ({ active, onCancel, errors }) => {
 	const [activeForm, setActiveForm] = useState<ActiveFormState>('login');
-	const errors = useTypedSelector(({ auth }) => auth.errors);
 	const onGoogleClick = () => {
 		saveStore();
 		window.open(`${BASE_URL}/api/auth/google`, '_self');
@@ -25,6 +24,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ active, onCancel }) => {
 		window.open(`${BASE_URL}/api/auth/github`, '_self');
 	};
 	const renderedErrors = errors?.map((err, i) => {
+		active = true;
 		return (
 			<p className="is-danger" key={i}>
 				{err}

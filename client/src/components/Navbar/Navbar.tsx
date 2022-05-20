@@ -4,6 +4,7 @@ import {
 	useNewPage,
 	useToggle,
 	useBlockNav,
+	useActions,
 } from '../../hooks';
 import UserMenu from './UserMenu';
 import { BASE_URL } from '../../utils';
@@ -13,9 +14,10 @@ import AuthModal from '../Modals/AuthModal/AuthModal';
 
 const Navbar = () => {
 	const newPage = useNewPage();
+	const { authClearErrors } = useActions();
+	const auth = useTypedSelector(({ auth }) => auth);
 	const [showAuthModal, setShowAuthModal] = useToggle();
 	const { blockNav, showBlockModal, toggleBlockModal } = useBlockNav();
-	const auth = useTypedSelector(({ auth }) => auth);
 
 	// NAV LINK BLOCKING
 	const onLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -77,10 +79,14 @@ const Navbar = () => {
 					</div>
 				</div>
 			</nav>
-			{showAuthModal && (
+			{(showAuthModal || auth.errors) && (
 				<AuthModal
 					active={showAuthModal}
-					onCancel={() => setShowAuthModal(false)}
+					errors={auth.errors}
+					onCancel={() => {
+						setShowAuthModal(false);
+						authClearErrors();
+					}}
 				/>
 			)}
 			{showBlockModal && (

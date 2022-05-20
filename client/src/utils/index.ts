@@ -3,6 +3,7 @@ import { store, TabsState } from '../state';
 import { BundleState } from '../state/reducers/bundlesReducer';
 
 export const BASE_URL = 'https://codebooks.net';
+// export const BASE_URL = 'http://localhost:8080';
 
 export const saveStore = () => {
 	localStorage.setItem('__store', JSON.stringify(store.getState()));

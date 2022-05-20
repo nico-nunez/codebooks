@@ -6,6 +6,7 @@ import {
 	AuthAction,
 	AuthSuccessAction,
 	AuthFailureAction,
+	AuthClearErrorsAction,
 } from '../actions/authActions';
 
 interface Registration {
@@ -86,5 +87,12 @@ export const authenticateSession = () => {
 		} catch (err: any) {
 			dispatch(authFailure(err.response.data.error.messages));
 		}
+	};
+};
+
+export const authClearErrors = (): AuthClearErrorsAction => {
+	return {
+		type: AuthActionType.AUTH_CLEAR_ERRORS,
+		payload: {},
 	};
 };
