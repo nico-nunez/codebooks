@@ -44,8 +44,9 @@ const validateInput = (
 	}
 	if (type === 'password' && options.password) {
 		const re =
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/;
+			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 		const validPass = re.test(value);
+		console.log(value, validPass);
 		if (!validPass)
 			return {
 				[name]:
